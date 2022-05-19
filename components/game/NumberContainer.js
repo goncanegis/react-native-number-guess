@@ -14,17 +14,18 @@ const deviceWidth = Dimensions.get('window').width;
 
 const styles = StyleSheet.create({
   container: {
-    borderWidth: 4,
-    borderColor: Colors.accent500,
+    borderWidth: 2,
+    borderColor: Colors.accent500Transparent,
     padding: deviceWidth < 380 ? 12 : 24,
-    borderRadius: 8,
+    borderRadius: 100,
     alignItems: 'center',
     justifyContent: 'center',
     margin: deviceWidth < 380 ? 12 : 24,
+    backgroundColor: Colors.primary600Transparent,
   },
   numberText: {
-    color: Colors.accent500,
-    fontSize: deviceWidth < 380 ? 12 : 36,
+    color: Colors.textDark,
+    fontSize: deviceWidth < 380 ? 24 : 36,
     fontFamily: 'open-sans-bold',
   },
 });

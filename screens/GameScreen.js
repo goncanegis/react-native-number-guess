@@ -13,6 +13,7 @@ import { InstructionText } from '../components/ui/InstructionText';
 import { Ionicons } from '@expo/vector-icons';
 import { GuessLogItem } from '../components/game/GuessLogItem';
 import { Card } from '../components/ui/Card';
+import { Colors } from '../constants/Colors';
 
 const generateRandomBetween = (min, max, exclude) => {
   const rndNum = Math.floor(Math.random() * (max - min)) + min;
@@ -81,12 +82,12 @@ export const GameScreen = ({ userNumber, onGameOver }) => {
         <View style={styles.buttonsContainer}>
           <View style={styles.buttonContainer}>
             <PrimaryButton onPress={nextGuessHandler.bind(this, 'lower')}>
-              <Ionicons name="md-remove" size={24} color="white" />
+              <Ionicons name="md-remove" size={24} color={Colors.textDark} />
             </PrimaryButton>
           </View>
           <View style={styles.buttonContainer}>
             <PrimaryButton onPress={nextGuessHandler.bind(this, 'greater')}>
-              <Ionicons name="md-add" size={24} color="white" />
+              <Ionicons name="md-add" size={24} color={Colors.textDark} />
             </PrimaryButton>
           </View>
         </View>
@@ -139,7 +140,8 @@ export const GameScreen = ({ userNumber, onGameOver }) => {
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
-    padding: 24,
+    paddingVertical: 30,
+    paddingHorizontal: 24,
     alignItems: 'center',
   },
   instructionText: {

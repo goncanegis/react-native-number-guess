@@ -5,8 +5,8 @@ import {
   View,
   StyleSheet,
   useWindowDimensions,
+  ScrollView,
 } from 'react-native';
-import { ScrollView } from 'react-native';
 import { PrimaryButton } from '../components/ui/PrimaryButton';
 import { Title } from '../components/ui/Title';
 import { Colors } from '../constants/Colors';
@@ -18,15 +18,7 @@ export const GameOverScreen = ({
 }) => {
   const { width, height } = useWindowDimensions();
 
-  let imageSize = 300;
-
-  if (width < 380) {
-    imageSize = 150;
-  }
-
-  if (height < 400) {
-    imageSize = 80;
-  }
+  let imageSize = width < 500 ? width * 0.6 : width * 0.3;
 
   const imageStyle = {
     width: imageSize,
@@ -43,6 +35,7 @@ export const GameOverScreen = ({
             source={require('../assets/images/success.png')}
             style={styles.image}
           />
+          <View style={styles.overlay} />
         </View>
         <View>
           <Text style={styles.summaryText}>
@@ -63,8 +56,6 @@ const styles = StyleSheet.create({
   screen: {
     flex: 1,
     padding: 24,
-    alignItems: 'center',
-    justifyContent: 'center',
   },
   rootContainer: {
     flex: 1,
@@ -74,7 +65,7 @@ const styles = StyleSheet.create({
   },
   imageContainer: {
     borderWidth: 3,
-    borderColor: Colors.primary800,
+    borderColor: Colors.accent500Transparent,
     overflow: 'hidden',
     margin: 36,
   },
@@ -90,6 +81,10 @@ const styles = StyleSheet.create({
   },
   highlight: {
     fontFamily: 'open-sans-bold',
-    color: Colors.primary500,
+    color: Colors.textDark,
+  },
+  overlay: {
+    ...StyleSheet.absoluteFillObject,
+    backgroundColor: Colors.primary500Transparent,
   },
 });

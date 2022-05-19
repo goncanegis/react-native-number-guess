@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import { PrimaryButton } from '../components/ui/PrimaryButton';
 import { Colors } from '../constants/Colors';
-import { Title } from '../components/ui/Title';
+import { Title } from '../components/ui/Title.ios';
 import { Card } from '../components/ui/Card';
 import { InstructionText } from '../components/ui/InstructionText';
 
@@ -94,9 +94,9 @@ const styles = StyleSheet.create({
     height: 50,
     width: 50,
     fontSize: 32,
-    borderColor: Colors.accent500,
-    borderWidth: 2,
-    color: Colors.accent500,
+    borderBottomColor: Colors.accent500,
+    borderBottomWidth: 2,
+    color: Colors.textDark,
     marginVertical: 8,
     fontWeight: 'bold',
     textAlign: 'center',
